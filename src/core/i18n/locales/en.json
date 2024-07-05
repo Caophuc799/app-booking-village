@@ -1,3 +1,28 @@
 {
-  "home": "home"
+  "home": {
+    "whenIn": "When in ",
+    "comingSoons": {
+      "title": "Coming Soons",
+      "availableOn": "Available On"
+    },
+    "districts": {
+      "district_1": "Quận 1",
+      "district_2": "Quận 2",
+      "district_3": "Quận 3",
+      "district_4": "Quận 4",
+      "district_5": "Quận 5",
+      "district_6": "Quận 6",
+      "district_7": "Quận 7",
+      "district_8": "Quận 8",
+      "district_9": "Quận 9"
+    },
+    "booking": {
+      "onlyFrom": "ONLY FROM",
+      "unit": "VND/Night",
+      "taxesAndFeeIncluded": "Taxes and fees included"
+    },
+    "actions": {
+      "selectRoom": "Select Room"
+    }
+  }
 }

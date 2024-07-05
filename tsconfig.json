@@ -7,7 +7,9 @@
       "core": ["src/core"],
       "utils/*": ["src/utils/*"],
       "common/*": ["src/common/*"],
-      "screens/*": ["src/screens/*"]
+      "screens/*": ["src/screens/*"],
+      "types/*": ["src/types/*"]
     }
-  }
+  },
+  "esModuleInterop": true
 }

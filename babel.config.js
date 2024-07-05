@@ -10,6 +10,7 @@ module.exports = {
           utils: './src/utils',
           common: './src/common',
           screens: './src/screens',
+          types: './src/types',
         },
       },
     ],
