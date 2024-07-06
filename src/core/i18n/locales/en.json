@@ -1,6 +1,7 @@
 {
   "home": {
     "whenIn": "When in ",
+    "whereAreYouGoing": "Where are you going?",
     "comingSoons": {
       "title": "Coming Soons",
       "availableOn": "Available On"
@@ -24,5 +25,8 @@
     "actions": {
       "selectRoom": "Select Room"
     }
+  },
+  "actions": {
+    "retry": "Retry"
   }
 }

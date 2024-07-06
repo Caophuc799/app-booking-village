@@ -43,7 +43,7 @@ export const SelectablePills = <Value, Item extends { key: Value; label: ReactNo
       onChange(item.key);
     }
   };
-  console.log('items ', items);
+
   return (
     <ScrollView
       horizontal

@@ -22,8 +22,7 @@ export const Screen = ({
     {
       flex: 1,
       ...((bottomInset || extraBottomInset) && {
-        paddingBottom:
-          bottomInset || extraBottomInset ? inset.bottom + (extraBottomInset ? 16 : 0) || theme.spacing[4] : 0,
+        paddingBottom: bottomInset || extraBottomInset ? inset.bottom + (extraBottomInset ? 16 : 0) || 16 : 0,
       }),
       ...(topInset && {
         paddingTop: topInset ? inset.top || 24 : 0,

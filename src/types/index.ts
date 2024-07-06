@@ -1,4 +1,4 @@
-export type Room = {
+export type Village = {
   id: number;
   name: string;
   price: string;

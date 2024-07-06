@@ -1,12 +1,7 @@
-import {
-  configLoggerType,
-  consoleTransport,
-  logger as rnLogger,
-} from 'react-native-logs';
-
+import { configLoggerType, consoleTransport, logger as rnLogger } from 'react-native-logs';
 
 const getTransport = () => {
-    return consoleTransport;
+  return consoleTransport;
 };
 
 const config: configLoggerType = {
@@ -16,7 +11,7 @@ const config: configLoggerType = {
     warn: 2,
     error: 3, // errors are sent to crashlytics
   },
-  severity:  'error' ,
+  severity: 'error',
   transport: getTransport(),
   transportOptions: {
     // https://github.com/onubo/react-native-logs#available-colors
@@ -40,8 +35,6 @@ const config: configLoggerType = {
   printLevel: false,
 };
 
-export const log = rnLogger.createLogger<'debug' | 'info' | 'warn' | 'error'>(
-  config,
-);
+export const log = rnLogger.createLogger<'debug' | 'info' | 'warn' | 'error'>(config);
 
-export const appLog = log.extend('app');
+export const appLog = log.extend('App');

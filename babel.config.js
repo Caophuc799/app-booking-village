@@ -11,6 +11,8 @@ module.exports = {
           common: './src/common',
           screens: './src/screens',
           types: './src/types',
+          api: './src/api',
+          dataAccess: './src/dataAccess',
         },
       },
     ],

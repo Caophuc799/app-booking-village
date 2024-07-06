@@ -3,8 +3,9 @@ import { Component } from 'react';
 import { setJSExceptionHandler } from 'react-native-exception-handler';
 
 import { log } from 'core/logger';
-import { View } from 'react-native';
-import { Text } from '@rneui/base';
+import { StyleSheet, View } from 'react-native';
+import { ErrorScreen, Text } from 'common/components';
+import { makeStyles } from '@rneui/themed';
 
 type Props = {
   children: ReactNode;
@@ -41,15 +42,7 @@ class ErrorBoundary extends Component<Props, State> {
     const { error } = this.state;
 
     if (error) {
-      return (
-        // <ErrorScreen
-        //   subTitle={isStoreBuild() ? undefined : error.toString()}
-        //   onClose={() => this.setState({ error: null })}
-        // />
-        <View>
-          <Text>There are some error</Text>
-        </View>
-      );
+      return <ErrorScreen />;
     }
 
     return children;

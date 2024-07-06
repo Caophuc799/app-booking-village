@@ -14,18 +14,12 @@ export const ComingSoon = () => {
       <View style={styles.container}>
         <ImageBackground
           resizeMode='stretch'
-          style={{
-            width: Dimensions.get('window').width - 24,
-            alignItems: 'flex-end',
-            flexDirection: 'row',
-            aspectRatio: 1.8,
-            padding: 12,
-          }}
+          style={styles.backgroundImage}
           source={{
             uri: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/The_Event_2010_Intertitle.svg/1200px-The_Event_2010_Intertitle.svg.png',
           }}
         >
-          <View style={{ flex: 1 }}>
+          <View>
             <Text variant='header' color={colors.primary600}>
               M VILLAGE TAO DAN PARK
             </Text>
@@ -45,6 +39,13 @@ export const ComingSoon = () => {
 
 const useStyles = makeStyles(theme => ({
   container: { overflow: 'hidden', borderRadius: 10, marginVertical: 16 },
+  backgroundImage: {
+    width: Dimensions.get('window').width - 24,
+    alignItems: 'flex-end',
+    flexDirection: 'row',
+    aspectRatio: 1.8,
+    padding: 12,
+  },
   timeContainer: {
     flexDirection: 'row',
     justifyContent: 'space-between',

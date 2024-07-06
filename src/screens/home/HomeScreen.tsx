@@ -1,26 +1,42 @@
-import { makeStyles } from '@rneui/themed';
-import { Screen } from 'common/components';
-import { useCallback } from 'react';
+import { Input, makeStyles } from '@rneui/themed';
+import { ErrorScreen, Screen, LoadingScreen } from 'common/components';
+import { useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { FlatList, StatusBar } from 'react-native';
+import { Animated, Dimensions, FlatList, ImageBackground, StatusBar, View } from 'react-native';
 import { MainScreenProps } from '../MainStack.types';
-import { HomeHeader, users } from './components';
-import { BookingItem } from './components/BookingItem';
+import { HomeAnimatedHeader, HomeInformation, users } from './components';
+import { VillageItem } from './components/VillageItem';
+import { Village } from 'types/index';
+import { colors } from 'common/theme';
+import useVillages from 'dataAccess/useVillages';
 
+const AnimatedFlatList = Animated.createAnimatedComponent(FlatList);
 const HomeScreen = ({ navigation }: MainScreenProps<'home'>) => {
-  const { t } = useTranslation();
   const styles = useStyles();
+  const [scrollY] = useState(new Animated.Value(0));
+  const { data, error, isLoading, refetch } = useVillages();
+  const handleScroll = Animated.event([{ nativeEvent: { contentOffset: { y: scrollY } } }], { useNativeDriver: false });
 
   const renderItem = useCallback(({ item }: { item: any }) => {
-    return <BookingItem booking={item} />;
+    return <VillageItem booking={item} />;
   }, []);
+
+  if (error) {
+    return <ErrorScreen retry={() => refetch()} />;
+  }
+
+  if (isLoading) {
+    return <LoadingScreen />;
+  }
 
   return (
     <Screen style={styles.screen}>
-      <FlatList
-        ListHeaderComponent={<HomeHeader />}
+      <HomeAnimatedHeader scrollY={scrollY} />
+      <AnimatedFlatList
+        ListHeaderComponent={<HomeInformation />}
         data={users}
-        keyExtractor={item => `${item.id}`}
+        onScroll={handleScroll}
+        keyExtractor={item => `${(item as Village).id}`}
         renderItem={renderItem}
       />
     </Screen>
@@ -32,6 +48,7 @@ const useStyles = makeStyles(theme => ({
     paddingHorizontal: 12,
     paddingVertical: 24,
     marginTop: 32,
+    flex: 1,
   },
 }));
 
