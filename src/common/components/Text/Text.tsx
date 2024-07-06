@@ -63,7 +63,7 @@ export const Text = ({ variant, children, color, style, ...rest }: Props) => {
   }, [variant]);
 
   return (
-    <RNEText style={[variantStyle, { color }, style]} {...rest}>
+    <RNEText style={[variantStyle, color ? { color } : {}, style]} {...rest}>
       {children}
     </RNEText>
   );
