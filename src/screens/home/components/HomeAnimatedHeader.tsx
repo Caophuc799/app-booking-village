@@ -105,6 +105,8 @@ const useStyles = makeStyles(theme => ({
     paddingHorizontal: 20,
     paddingVertical: 0,
     margin: 0,
+    borderWidth: 0,
+    borderBottomWidth: 0
   },
 }));
 

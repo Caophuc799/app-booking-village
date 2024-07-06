@@ -14,13 +14,15 @@ export const Text = ({ variant, children, color, style, ...rest }: Props) => {
       case 'headerLarge': {
         return {
           fontSize: 24,
-          fontWeight: '600',
+          fontWeight: '700',
+          color: '#080000'
         };
       }
       case 'header': {
         return {
           fontSize: 20,
           fontWeight: '600',
+          color: '#080000'
         };
       }
       case 'bodyBold': {

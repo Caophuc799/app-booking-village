@@ -3,10 +3,10 @@ import { colors, spacing } from './primitives';
 
 export const theme = createTheme({
   lightColors: {
-    primary: '#e7e7e8',
+    primary: '#080000',
   },
   darkColors: {
-    primary: '#000',
+    primary: '#080000',
   },
   spacing: { xs: 2, sm: 8, md: 12, lg: 24, xl: 40 },
   mode: 'light',
